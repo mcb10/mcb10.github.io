@@ -1,0 +1,47 @@
+---
+
+---
+
+<div>
+    <a href="/" class="nav-link">Home</a>
+    <a href="/about/" class="nav-link">About</a>
+    <a href="/portfolio/" class="nav-link">Portfolio</a>
+</div>
+
+<style>
+    a {
+        text-decoration: none;
+        margin: 12px 0;
+    }
+    .nav-link {
+        color: #000;
+        position: relative;
+        outline: none !important;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        transition: 0.2s;
+        padding: 8px 16px;
+    }
+
+    .nav-link::after {
+        content: "";
+        background-color: black;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 0;
+        transition: 0.2s;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus {
+        color: #4c2be2;
+    }
+
+    .nav-link:hover::after,
+    .nav-link:focus::after {
+        background-color: #4c2be2;
+        width: 100%;
+    }
+</style>

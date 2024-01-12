@@ -1,0 +1,71 @@
+---
+
+---
+
+<div class="ticker-tape-container">
+    <div class="ticker-tape">
+        <span>Product Designer from the UK</span>
+        <div class="separator"></div>
+        <span>Product Designer from the UK</span>
+        <div class="separator"></div>
+        <span>Product Designer from the UK</span>
+        <div class="separator"></div>
+        <span>Product Designer from the UK</span>
+        <div class="separator"></div>
+    </div>
+    <div class="ticker-tape" aria-hidden="true">
+        <span>Product Designer from the UK</span>
+        <div class="separator"></div>
+        <span>Product Designer from the UK</span>
+        <div class="separator"></div>
+        <span>Product Designer from the UK</span>
+        <div class="separator"></div>
+        <span>Product Designer from the UK</span>
+        <div class="separator"></div>
+    </div>
+</div>
+
+<style>
+    .ticker-tape-container {
+        overflow-x: hidden;
+        width: 100%;
+        display: flex;
+        transform: rotate(-3deg);
+        padding: 12px;
+        border-top: solid 1px #d6e3e7;
+        border-bottom: solid 1px #d6e3e7;
+    }
+    .ticker-tape {
+        display: flex;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        line-height: 1.5em;
+        letter-spacing: 4px;
+        white-space: nowrap;
+        align-items: center;
+        flex: 0 0 auto;
+        gap: 1rem;
+        animation-name: marquee;
+        animation-duration: 30s;
+        animation-timing-function: linear;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
+        animation-play-state: running;
+        animation-direction: normal;
+    }
+
+    .separator {
+        width: 32px;
+        height: 1px;
+        background-color: #d6e3e7;
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+</style>

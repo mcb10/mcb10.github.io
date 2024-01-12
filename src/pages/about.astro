@@ -1,0 +1,68 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "About";
+
+const identity = {
+    firstName: "Mia",
+    country: "United Kingdom",
+    occupation: "Product Designer",
+    hobbies: ["basketball", "drawing", "gaming", "movies"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
+
+const skillColor = "navy";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <section role="contentinfo" aria-label="Introduction to me">
+        <div class="container">
+            <p>
+                I'm {identity.firstName}, a {identity.occupation} based in {
+                    identity.country
+                }.
+            </p>
+
+            <p>My skills are:</p>
+            <ul>
+                {skills.map((skill) => <li class="skill">{skill}</li>)}
+            </ul>
+        </div>
+    </section>
+</BaseLayout>
+
+<style define:vars={{ skillColor }}>
+    main {
+        margin: auto;
+        padding: 1rem;
+        width: 800px;
+        max-width: calc(100% - 2rem);
+        color: white;
+        font-size: 20px;
+        line-height: 1.6;
+    }
+    .astro-a {
+        position: absolute;
+        top: -32px;
+        left: 50%;
+        transform: translatex(-50%);
+        width: 220px;
+        height: auto;
+        z-index: -1;
+    }
+    .text-gradient {
+        background-image: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 400%;
+        background-position: 0%;
+    }
+    .skill {
+        color: var(--skillColor);
+        font-weight: bold;
+    }
+</style>

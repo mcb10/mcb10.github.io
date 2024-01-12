@@ -1,0 +1,160 @@
+html {
+  background-color: var(--color-background-primary);
+  font-family: 'Montserrat', sans-serif;
+}
+
+html.dark {
+  background-color: #1D2225;
+  color: #fff;
+}
+
+.dark .nav-links a {
+  color: #fff;
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0;
+  font-size: 3.5rem;
+  line-height: 1.35em;
+  font-weight: 600;
+  text-align: center;
+}
+
+h2 {
+  margin: 0;
+  font-size: 2.5rem;
+  line-height: 1.35em;
+  font-weight: 600;
+  text-align: left;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.35em;
+  font-weight: 600;
+  text-align: left;
+}
+
+section {
+  position: relative;
+  display: grid;
+  padding-top: 180px;
+  padding-bottom: 180px;
+  justify-content: center;
+}
+
+.body-display {
+  color: #627481;
+  font-size: 16px;
+  line-height: 24px;
+
+  &.large {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  &.dual-paragraph {
+    column-count: 1;
+  }
+}
+
+.subtitle {
+  color: #627481;
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+
+/* navigation styles */
+
+header {
+  height: 64px;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #d6e3e7;
+}
+
+.hamburger {
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  display: block;
+  width: 40px;
+  height: 5px;
+  margin-bottom: 10px;
+  background-color: #ff9776;
+}
+
+.nav-links {
+  width: 100%;
+  top: 5rem;
+  left: 48px;
+  background-color: #ff9776;
+  display: none;
+  margin: 0;
+}
+
+.nav-links a {
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  background-color: #ff9776;
+}
+
+.expanded {
+  display: unset;
+}
+
+@media screen and (min-width: 636px) {
+  .nav-links {
+    margin-left: 5em;
+    display: block;
+    position: static;
+    width: auto;
+    background: none;
+  }
+
+  .nav-links a {
+    display: inline-block;
+    padding: 15px 20px;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  section {
+    position: relative;
+    display: flex;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .body-display {
+    &.dual-paragraph {
+      column-count: 2;
+      column-gap: 64px;    
+    }
+  }
+
+}

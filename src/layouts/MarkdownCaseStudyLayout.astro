@@ -1,0 +1,49 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+    <div class="hero-intro">
+        <h1>{frontmatter.client}</h1>
+        <p class="body-display large">{frontmatter.intro}</p>
+    </div>
+    <section role="contentinfo" aria-label="Overview">
+        <div class="grid-wrapper">
+            <div class="subtitle" aria-hidden="true">Overview</div>
+            <div class="overview-wrapper">
+                <h2>{frontmatter.overviewTitle}</h2>
+                <p class="body-display dual-paragraph">{frontmatter.overviewDescription}</p>
+            </div>
+        </div>
+    </section>
+    <section role="contentinfo" aria-label="The Problem">
+        <div class="grid-wrapper">
+            <div class="subtitle" aria-hidden="true">The Problem</div>
+            <h3>Problem Statement</h3>
+            <p class="body-display">{frontmatter.problemStatement}</p>
+            <h3>The Challenge</h3>
+            <p class="body-display">{frontmatter.theChallenge}</p>
+        </div>
+    </section>
+    <section role="contentinfo" aria-label="What we did">
+        <div class="grid-wrapper">
+            <h2>What we did</h2>
+            <p class="body-display">{frontmatter.problemStatement}</p>
+        </div>
+    </section>
+    <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+    <slot />
+</BaseLayout>
+
+<style>
+    .hero-intro {
+        padding-top: 128px;
+        padding-bottom: 64px;
+        justify-items: center;
+        text-align: center;
+    }
+    .grid-wrapper {
+        width: 100%;
+    }
+</style>
