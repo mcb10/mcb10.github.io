@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-const allProjects = await Astro.glob("../pages/projects/*.md");
 const pageTitle = "Portfolio";
 ---
 
@@ -12,17 +11,6 @@ const pageTitle = "Portfolio";
             <div>
                 <ProjectCard title="Virgin Atlantic" url="/projects/vads"/>
             </div>
-            <!-- <div>
-                {
-                    allProjects.map((project) => (
-                        <ProjectCard
-                            title={project.frontmatter.client}
-                            body={project.frontmatter.intro}
-                            url={project.url}
-                        />
-                    ))
-                }
-            </div> -->
         </div>
     </section>
 </BaseLayout>

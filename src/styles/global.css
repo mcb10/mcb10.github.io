@@ -60,6 +60,10 @@ section {
   justify-content: center;
 }
 
+.text-centre {
+  text-align: center;
+}
+
 .body-display {
   color: #627481;
   font-size: 1rem;
