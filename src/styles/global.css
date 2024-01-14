@@ -1,5 +1,5 @@
 html {
-  background-color: var(--color-background-primary);
+  background-color: #fff;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -10,6 +10,11 @@ html.dark {
 
 .dark .nav-links a {
   color: #fff;
+}
+
+.dark header {
+  background-color: #1b1d1e;
+  border-bottom: 1px solid #282b2b;
 }
 
 body {
@@ -26,6 +31,7 @@ h1 {
   line-height: 1.35em;
   font-weight: 600;
   text-align: center;
+  padding-bottom: 1.5rem;
 }
 
 h2 {
@@ -117,16 +123,13 @@ header {
 .hamburger .line {
   display: block;
   width: 40px;
-  height: 5px;
-  margin-bottom: 10px;
-  background-color: #ff9776;
+  height: 2px;
+  margin-bottom: 12px;
+  background-color: #fff;
 }
 
 .nav-links {
   width: 100%;
-  top: 5rem;
-  left: 48px;
-  background-color: #ff9776;
   display: none;
   margin: 0;
 }
@@ -134,16 +137,42 @@ header {
 .nav-links a {
   display: block;
   text-align: center;
-  padding: 10px 0;
+  padding: 8px 16px;
   text-decoration: none;
   font-size: 1.2rem;
-  font-weight: bold;
+  color: #000;
+  position: relative;
+  outline: none !important;
   text-transform: uppercase;
+  letter-spacing: 4px;
+  transition: 0.2s;
 }
 
 .nav-links a:hover,
 .nav-links a:focus {
-  background-color: #ff9776;
+  color: #3c0fef;
+}
+
+.nav-link:hover::after,
+.nav-link:focus::after {
+  background-color: #3c0fef;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  margin: 12px 0;
+}
+
+.nav-link::after {
+  content: "";
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  transition: 0.2s;
 }
 
 .expanded {
@@ -152,30 +181,36 @@ header {
 
 
 @media screen and (min-width: 375px) {
-  .header-wrapper, .container {
-    max-width: 375px;
+
+  .header-wrapper,
+  .container {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
   }
 }
 
 @media screen and (min-width: 640px) {
-  .header-wrapper, .container {
-    max-width: 640px;
+
+  .header-wrapper,
+  .container {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .header-wrapper, .container {
-    max-width: 768px;
+
+  .header-wrapper,
+  .container {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 
   .nav-links {
-    margin-left: 5em;
     display: block;
     position: static;
     width: auto;
@@ -207,13 +242,17 @@ header {
 }
 
 @media screen and (min-width: 1024px) {
-  .header-wrapper, .container {
+
+  .header-wrapper,
+  .container {
     max-width: 1024px;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .header-wrapper, .container {
+
+  .header-wrapper,
+  .container {
     max-width: 1280px;
   }
 }
