@@ -1,12 +1,16 @@
 ---
 layout: ../../layouts/MarkdownCaseStudyLayout.astro
-title: Virgin Atlantic
-author: Astro Learner
-description: "I had some challenges, but asking in the community really helped!"
-image:
-    url: "https://docs.astro.build/assets/rays.webp"
-    alt: "Thumbnail of Astro rays."
-pubDate: 2022-07-15
-tags: ["astro", "learning in public", "setbacks", "community"]
+client: IMGeospatial
+intro: Digtialising the Human-Wildlife Conflict claims process in Rwanda to improve process efficicency.
+heroImage:
+    url: ../../images/soarizon-cover.png
+    alt: 'Dogs'
+
+overviewTitle: Digitalising the Human-Wildlife Conflict claims process
+
+overviewDescription: 
+
+problemStatement: IMGeospatial needed a design system to act as a signle source of truth for all scrum teams, to help maintain a consistent brand, user experience, as well as improve business efficiency when implementing new features.
+
+tags: ["UX Research", "UX Audit", "UI Design", "QA of implementation"]
 ---
-It wasn't always smooth sailing, but I'm enjoying building with Astro. And, the [Discord community](https://astro.build/chat) is really friendly and helpful!

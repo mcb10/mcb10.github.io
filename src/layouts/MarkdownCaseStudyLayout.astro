@@ -1,38 +1,36 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import ContentLayout from "./ContentLayout.astro";
 const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-    <div class="hero-intro">
-        <h1>{frontmatter.client}</h1>
-        <p class="body-display large">{frontmatter.intro}</p>
-    </div>
-    <section role="contentinfo" aria-label="Overview">
-        <div class="grid-wrapper">
-            <div class="subtitle" aria-hidden="true">Overview</div>
-            <div class="overview-wrapper">
-                <h2>{frontmatter.overviewTitle}</h2>
-                <p class="body-display dual-paragraph">{frontmatter.overviewDescription}</p>
+    <ContentLayout ariaLabel="Introduction">
+        <div class="hero-intro">
+            <h1>{frontmatter.client}</h1>
+            <p class="body-display large">{frontmatter.intro}</p>
+        </div>
+    </ContentLayout>
+
+    <ContentLayout ariaLabel="Overview">
+        <div class="subtitle" aria-hidden="true">Overview</div>
+        <div class="overview-wrapper">
+            <h2 class="section">{frontmatter.overviewTitle}</h2>
+            <p class="body-display dual-paragraph">
+                {frontmatter.overviewDescription}
+            </p>
+        </div>
+    </ContentLayout>
+    <ContentLayout ariaLabel="The Problem">
+        <div class="image-content">
+            <img src={frontmatter.heroImage.url}/>
+            <div>
+                <div class="subtitle" aria-hidden="true">The Problem</div>
+                <h2 class="section">Problem Statement</h2>
+                <p class="body-display">{frontmatter.problemStatement}</p>
             </div>
         </div>
-    </section>
-    <section role="contentinfo" aria-label="The Problem">
-        <div class="grid-wrapper">
-            <div class="subtitle" aria-hidden="true">The Problem</div>
-            <h3>Problem Statement</h3>
-            <p class="body-display">{frontmatter.problemStatement}</p>
-            <h3>The Challenge</h3>
-            <p class="body-display">{frontmatter.theChallenge}</p>
-        </div>
-    </section>
-    <section role="contentinfo" aria-label="What we did">
-        <div class="grid-wrapper">
-            <h2>What we did</h2>
-            <p class="body-display">{frontmatter.problemStatement}</p>
-        </div>
-    </section>
-    <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+    </ContentLayout>
     <slot />
 </BaseLayout>
 
@@ -43,7 +41,17 @@ const { frontmatter } = Astro.props;
         justify-items: center;
         text-align: center;
     }
-    .grid-wrapper {
-        width: 100%;
+    .image-content {
+        display: grid;
+        padding: 2rem;
+        grid-template-columns: 300px 1fr;
+        gap: 1rem;
+        align-items: center;
+        margin: 0 auto;
+        font: 500 100%/1.5 system-ui;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
     }
 </style>

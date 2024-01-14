@@ -34,6 +34,10 @@ h2 {
   line-height: 1.35em;
   font-weight: 600;
   text-align: left;
+
+  &.section {
+    margin-bottom: 24px;
+  }
 }
 
 h3 {
@@ -42,6 +46,10 @@ h3 {
   line-height: 1.35em;
   font-weight: 600;
   text-align: left;
+
+  &.section {
+    margin-bottom: 24px;
+  }
 }
 
 section {
@@ -54,12 +62,12 @@ section {
 
 .body-display {
   color: #627481;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 1rem;
+  line-height: 1.5em;
 
   &.large {
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 1.24rem;
+    line-height: 1.5em;
   }
 
   &.dual-paragraph {
@@ -67,11 +75,24 @@ section {
   }
 }
 
+.body-caption {
+  color: #627481;
+  font-size: 0.875rem;
+  line-height: 1.5em;
+  padding-top: 12px;
+}
+
 .subtitle {
   color: #627481;
   font-size: 0.75rem;
   letter-spacing: 4px;
   text-transform: uppercase;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -125,7 +146,30 @@ header {
   display: unset;
 }
 
-@media screen and (min-width: 636px) {
+
+@media screen and (min-width: 375px) {
+  .header-wrapper, .container {
+    max-width: 375px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .header-wrapper, .container {
+    max-width: 640px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header-wrapper, .container {
+    max-width: 768px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
   .nav-links {
     margin-left: 5em;
     display: block;
@@ -153,8 +197,19 @@ header {
   .body-display {
     &.dual-paragraph {
       column-count: 2;
-      column-gap: 64px;    
+      column-gap: 64px;
     }
   }
+}
 
+@media screen and (min-width: 1024px) {
+  .header-wrapper, .container {
+    max-width: 1024px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .header-wrapper, .container {
+    max-width: 1280px;
+  }
 }

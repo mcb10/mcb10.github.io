@@ -1,0 +1,9 @@
+---
+const { ariaLabel } = Astro.props;
+---
+
+<section role="contentinfo" aria-label={ariaLabel}>
+    <div class="container">
+        <slot />
+    </div>
+</section>

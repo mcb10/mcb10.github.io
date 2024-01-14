@@ -10,6 +10,9 @@ const pageTitle = "Portfolio";
         <div class="container">
             <p>Explore my portfolio of projects</p>
             <div>
+                <ProjectCard title="Virgin Atlantic" url="/projects/vads"/>
+            </div>
+            <!-- <div>
                 {
                     allProjects.map((project) => (
                         <ProjectCard
@@ -19,38 +22,7 @@ const pageTitle = "Portfolio";
                         />
                     ))
                 }
-            </div>
+            </div> -->
         </div>
     </section>
 </BaseLayout>
-
-<style>
-    main {
-        margin: auto;
-        padding: 1rem;
-        width: 800px;
-        max-width: calc(100% - 2rem);
-        color: white;
-        font-size: 20px;
-        line-height: 1.6;
-    }
-    .astro-a {
-        position: absolute;
-        top: -32px;
-        left: 50%;
-        transform: translatex(-50%);
-        width: 220px;
-        height: auto;
-        z-index: -1;
-    }
-    .text-gradient {
-        background-image: var(--accent-gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-size: 400%;
-        background-position: 0%;
-    }
-    .project-wrapper {
-        margin-bottom: 5px;
-    }
-</style>
