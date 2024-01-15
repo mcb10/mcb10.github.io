@@ -1,8 +1,25 @@
 ---
-const { title, body, url } = Astro.props;
+import { Image } from "astro:assets";
+const { company, title, body, url, imgRef } = Astro.props;
 ---
 
-<li class="link-card">
+<li class="card">
+	<a href={url}>
+		<div class="img-hover-zoom">
+			<Image
+				src={imgRef}
+				alt="A variety of Virgin Atlantic Design System components and patterns, arranged into a collage"
+				class="img"
+			/>
+		</div>
+		<div class="content-wrapper">
+			<div class="subtitle" aria-hidden="true">{company}</div>
+			<h3>{title}</h3>
+		</div>
+	</a>
+</li>
+
+<!-- <li class="link-card">
 	<a href={url}>
 		<h3>
 			{title}
@@ -11,9 +28,57 @@ const { title, body, url } = Astro.props;
 			{body}
 		</p>
 	</a>
-</li>
+</li> -->
 <style>
-	.link-card {
+	.card {
+		background-color: #fff;
+		border-radius: 0.5rem;
+		/* box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45); */
+		padding-bottom: 1rem;
+	}
+
+	.card > :last-child {
+		margin-bottom: 0;
+	}
+
+	.card h3 {
+		margin-top: 1rem;
+		font-size: 1.25rem;
+	}
+
+	.img-hover-zoom {
+		height: inherit;
+		overflow: hidden;
+		border-radius: 0.5rem;
+	}
+
+	.img-hover-zoom img {
+		transition: transform 0.5s ease;
+	}
+
+	a:hover img {
+		transform: scale(1.1);
+		border-radius: 0.5rem;
+	}
+
+	img {
+		border-radius: 0.5rem;
+		width: 100%;
+		object-fit: cover;
+		aspect-ratio: 16/9;
+		max-height: max(10rem, 30vh);
+	}
+
+	img ~ * {
+		margin-left: 1rem;
+		margin-right: 1rem;
+	}
+
+	.content-wrapper {
+		padding: 1rem;
+	}
+
+	/* .link-card {
 		list-style: none;
 		display: flex;
 		background-color: #eeeeee;
@@ -43,5 +108,5 @@ const { title, body, url } = Astro.props;
 	}
 	.link-card:is(:hover, :focus-within) h2 {
 		color: rgb(var(--accent-light));
-	}
+	} */
 </style>

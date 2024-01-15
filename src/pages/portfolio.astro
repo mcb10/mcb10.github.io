@@ -1,16 +1,51 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ContentLayout from "../layouts/ContentLayout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-const pageTitle = "Portfolio";
+import VADSImg from "../images/va/vads-cover.png";
+import VAFCImg from "../images/va/vafc-cover.png";
+import SOARImg from "../images/soarizon/soarizon-cover.png";
+const pageTitle = "Projects";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <section>
-        <div class="container">
-            <p>Explore my portfolio of projects</p>
-            <div>
-                <ProjectCard title="Virgin Atlantic" url="/projects/vads"/>
-            </div>
+    <ContentLayout ariaLabel="Projects">
+        <div class="hero-intro">
+            <h1>Projects</h1>
+            <p class="body-display text-centre large">
+                Explore some of my wonderful projects
+            </p>
         </div>
-    </section>
+        <div>
+            <ul class="card-wrapper">
+                <ProjectCard
+                    company="Virgin Atlantic"
+                    title="Establishing a unified design system at the heart of Virgin Atlantic's brand"
+                    url="/projects/vads"
+                    imgRef={VADSImg}
+                />
+                <ProjectCard
+                    company="Virgin Atlantic"
+                    title="Redefining the way customers oversee and interact with their loyalty account"
+                    imgRef={VAFCImg}
+                />
+                <ProjectCard
+                    company="SOARIZON by Thales"
+                    title="Revitalizing the approach to mission planning for drone pilots to be more dynamic"
+                    imgRef={SOARImg}
+                />
+            </ul>
+        </div>
+    </ContentLayout>
 </BaseLayout>
+
+<style>
+    .card-wrapper {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+        grid-gap: 2rem;
+    }
+</style>
