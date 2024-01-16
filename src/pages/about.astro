@@ -1,5 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ContentLayout from "../layouts/ContentLayout.astro";
+import { Image } from "astro:assets";
+
+import Profile from "../images/profile.png";
 const pageTitle = "About";
 
 const identity = {
@@ -13,13 +17,56 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <section role="contentinfo" aria-label="Introduction to me">
-        <div class="container">
-            <p>
-                I'm {identity.firstName}, a {identity.occupation} based in {
-                    identity.country
-                }.
-            </p>
+    <ContentLayout ariaLabel="My Story">
+        <div class="row">
+            <div class="img-container left">
+                <Image
+                    src={Profile}
+                    alt="A variety of Virgin Atlantic Design System components and patterns, arranged into a collage"
+                    class="hero-img"
+                />
+            </div>
+            <div class="right">
+                <div class="subtitle" aria-hidden="true">My Story</div>
+                <div class="overview-wrapper">
+                    <h2 class="section">Hello, I'm Mia.</h2>
+                    <p class="body-display paragraph-section">
+                        I'm a <strong>creative thinker</strong> and a <strong>proactive problem-solver</strong>
+                        who thrives when presented with a challenges.
+                    </p>
+                    <p class="body-display paragraph-section">
+                        My approach to product design is shaped by my <strong>background
+                        as a developer</strong>, ensuring that solutions are
+                        well-engineered and scalable but also user-friendly.
+                        Combining this with my <strong>deep curiosity for the synergy of
+                        technology and design</strong>, I strive to ensure that designs
+                        are not just functional but also thoughtful, accessible,
+                        and inspiring.
+                    </p>
+                </div>
+            </div>
         </div>
-    </section>
+    </ContentLayout>
 </BaseLayout>
+
+<style>
+    .row {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+    }
+    .row .left {
+        overflow: hidden;
+    }
+    .row .left .hero-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 1rem;
+    }
+    @media screen and (min-width: 768px) {
+        .row {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+</style>

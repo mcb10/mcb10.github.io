@@ -1,0 +1,72 @@
+---
+
+---
+
+<div class="img-marquee">
+    <div class="marquee">
+        <ul class="marquee-content">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+
+        <ul aria-hidden="true" class="marquee-content">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+</div>
+
+<style>
+    .marquee {
+        --gap: 1rem;
+        position: relative;
+        display: flex;
+        overflow: hidden;
+        user-select: none;
+        gap: var(--gap);
+    }
+
+    .marquee-content {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: space-around;
+        gap: var(--gap);
+        min-width: 100%;
+        animation-name: scroll;
+        animation-duration: 30s;
+        animation-timing-function: linear;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
+        animation-play-state: running;
+        animation-direction: normal;
+    }
+
+    @keyframes scroll {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(calc(-100% - var(--gap)));
+        }
+    }
+
+
+    /* Other page demo styles */
+    .marquee-content > * {
+        flex: 0 0 auto;
+        color: white;
+        background: dodgerblue;
+        margin: 2px;
+        padding: 1rem 2rem;
+        border-radius: 0.25rem;
+        text-align: center;
+    }
+</style>

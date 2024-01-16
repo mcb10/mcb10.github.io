@@ -8,10 +8,12 @@ import mbLogo from "../images/mbLogo.webp";
 
 <header>
   <div class="header-wrapper">
-    <Hamburger />
-    <a href="/">
-      <Image src={mbLogo} alt="MB initials" height="48"/>
-    </a>
+    <div class="left-content">
+      <Hamburger />
+      <a href="/">
+        <Image src={mbLogo} alt="MB initials" height="48" />
+      </a>
+    </div>
 
     <nav>
       <NavMenu />
@@ -21,12 +23,17 @@ import mbLogo from "../images/mbLogo.webp";
 </header>
 
 <style>
+  .left-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: inherit;
+  }
   .header-wrapper {
     height: inherit;
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
   }
 </style>
