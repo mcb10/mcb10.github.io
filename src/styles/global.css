@@ -60,6 +60,10 @@ h3 {
   }
 }
 
+h4 {
+  font-weight: 600;
+}
+
 section {
   position: relative;
   display: grid;
@@ -77,8 +81,13 @@ section {
   font-size: 1rem;
   line-height: 1.5em;
 
+  &.small {
+    font-size: 0.875rem;
+    line-height: 1.5em;
+  }
+
   &.large {
-    font-size: 1.24rem;
+    font-size: 1.25rem;
     line-height: 1.5em;
   }
 
@@ -264,7 +273,6 @@ a {
   }
 
   section {
-    padding-top: 180px;
-    padding-bottom: 180px;
+    padding-bottom: 128px;
   }
 }

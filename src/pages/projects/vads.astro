@@ -1,8 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ContentLayout from "../../layouts/ContentLayout.astro";
+import IconCard from "../../components/IconCard.astro";
 import { Image } from "astro:assets";
-import ProblemImg from "../../images/va/theProblem.png";
 import VADSImg from "../../images/va/vads-cover.png";
 import Ticker from "../../components/Ticker.astro";
 const pageTitle = "VA-Design-System";
@@ -67,67 +67,119 @@ const pageTitle = "VA-Design-System";
         <div>
             <div class="subtitle" aria-hidden="true">What we did</div>
             <h2 class="section">The Process</h2>
-            <h3>Research</h3>
-            <p class="body-display">
-                Given the presence of multiple design systems within Virgin
-                Atlantic, I took the initiative to <strong>conduct a comprehensive audit
-                of each system</strong>. The goal was to gain a detailed understanding of
-                the necessity for each component and pattern, spanning both the
-                Virgin Atlantic and Virgin Atlantic Holidays brands.
-                Simultaneously, I delved into <strong>research on renowned design
-                systems</strong>, including IBM Carbon, Atlassian, and Material Design.
-                This groundwork was essential for <strong>constructing a robust business
-                case, highlighting the advantages of establishing a unified
-                source of truth for both designers and developers.
-            </p>
+            <div class="paragraph-section">
+                <h3>Research</h3>
+                <p class="body-display">
+                    Given the presence of multiple design systems within Virgin
+                    Atlantic, I took the initiative to <strong
+                        >conduct a comprehensive audit of each system</strong
+                    >. The goal was to gain a detailed understanding of the
+                    necessity for each component and pattern, spanning both the
+                    Virgin Atlantic and Virgin Atlantic Holidays brands.
+                    Simultaneously, I delved into <strong
+                        >research on renowned design systems</strong
+                    >, including IBM Carbon, Atlassian, and Material Design.
+                    This groundwork was essential for <strong
+                        >constructing a robust business case, highlighting the
+                        advantages of establishing a unified source of truth for
+                        both designers and developers.
+                    </strong>
+                </p>
+            </div>
+            <div class="paragraph-section">
+                <h3>Scope</h3>
+                <p class="body-display">
+                    To determine the scope for the first phase of our project,
+                    we <strong>established key principles</strong> that would distinguish
+                    which elements are designated as design system components and
+                    which would be retained locally within individual scrum teams.
+                    These principles were outlined as follows:
+                </p>
+                <ul class="card-wrapper">
+                    <IconCard
+                        icon="mdi:check-circle-outline"
+                        heading="Useful"
+                        body="There is evidence that this component would be useful for many teams."
+                    />
+                    <IconCard
+                        icon="mdi:diamond-outline"
+                        heading="Unique"
+                        body="It does not replicate something already in the design system."
+                    />
+                    <IconCard
+                        icon="mdi:accessibility"
+                        heading="Accessible"
+                        body="The component must meet at least AA 2.1 WCAG standards."
+                    />
+                    <IconCard
+                        icon="mdi:sync"
+                        heading="Consistent"
+                        body="It reuses existing styles and components in the design system where relevant."
+                    />
+                    <IconCard
+                        icon="mdi:extension-outline"
+                        heading="Versatile"
+                        body="The implementation is adaptable enough that the component can be used in a range of different products/services that may need it."
+                    />
+                </ul>
+            </div>
+            <ContentLayout ariaLabel="The Outcome">
+                <div>
+                    <div class="subtitle" aria-hidden="true">The Outcome</div>
+                    <h2 class="section">Conclusion</h2>
+                    <p class="body-display">
+                        Begin with discussions and brainstorms with the team
+                        during the empathise stage. Truly figure out what you
+                        need to include in the Design System based on real time
+                        user feedback around challenges they face.
+                    </p>
+                </div>
+            </ContentLayout>
         </div>
-    </ContentLayout>
-    <ContentLayout ariaLabel="The Outcome">
-        <div>
-            <div class="subtitle" aria-hidden="true">The Outcome</div>
-            <h2 class="section">Conclusion</h2>
-            <p class="body-display">
-                Begin with discussions and brainstorms with the team during the
-                empathise stage. Truly figure out what you need to include in
-                the Design System based on real time user feedback around
-                challenges they face.
-            </p>
-        </div>
+
+        <style>
+            .card-wrapper {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                margin-top: 1.5rem;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+                grid-gap: 1rem;
+            }
+            .img-container {
+                display: flex;
+                justify-content: center;
+                border-radius: 24px;
+                margin: 32px;
+            }
+            .hero-img {
+                width: 100%;
+                height: 400px;
+                object-fit: cover;
+                border-radius: 20px;
+            }
+            .hero-intro {
+                justify-items: center;
+                text-align: center;
+            }
+            .paragraph-section {
+                padding-bottom: 32px;
+            }
+            .image-content {
+                display: grid;
+                padding: 2rem;
+                grid-template-columns: 300px 1fr;
+                gap: 1rem;
+                align-items: center;
+                margin: 0 auto;
+                font: 500 100%/1.5 system-ui;
+            }
+            @media screen and (min-width: 1280px) {
+                .hero-img {
+                    max-width: 1280px;
+                }
+            }
+        </style>
     </ContentLayout>
 </BaseLayout>
-
-<style>
-    .img-container {
-        display: flex;
-        justify-content: center;
-        border-radius: 24px;
-        margin: 32px;
-    }
-    .hero-img {
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
-        border-radius: 20px;
-    }
-    .hero-intro {
-        justify-items: center;
-        text-align: center;
-    }
-    .withImage {
-        padding-bottom: 32px;
-    }
-    .image-content {
-        display: grid;
-        padding: 2rem;
-        grid-template-columns: 300px 1fr;
-        gap: 1rem;
-        align-items: center;
-        margin: 0 auto;
-        font: 500 100%/1.5 system-ui;
-    }
-    @media screen and (min-width: 1280px) {
-        .hero-img {
-            max-width: 1280px;
-        }
-    }
-</style>

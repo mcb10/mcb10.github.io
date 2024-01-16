@@ -20,43 +20,6 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
                     identity.country
                 }.
             </p>
-
-            <p>My skills are:</p>
-            <ul>
-                {skills.map((skill) => <li class="skill">{skill}</li>)}
-            </ul>
         </div>
     </section>
 </BaseLayout>
-
-<style>
-    main {
-        margin: auto;
-        padding: 1rem;
-        width: 800px;
-        max-width: calc(100%y - 2rem);
-        color: white;
-        font-size: 20px;
-        line-height: 1.6;
-    }
-    .astro-a {
-        position: absolute;
-        top: -32px;
-        left: 50%;
-        transform: translatex(-50%);
-        width: 220px;
-        height: auto;
-        z-index: -1;
-    }
-    .text-gradient {
-        background-image: var(--accent-gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-size: 400%;
-        background-position: 0%;
-    }
-    .skill {
-        color: var(--skillColor);
-        font-weight: bold;
-    }
-</style>
