@@ -4,6 +4,7 @@ import ContentLayout from "../../layouts/ContentLayout.astro";
 import IconCard from "../../components/IconCard.astro";
 import { Image } from "astro:assets";
 import VADSImg from "../../images/va/vads-cover.png";
+import VADSFoundations from "../../images/va/foundations.png";
 import Ticker from "../../components/Ticker.astro";
 const pageTitle = "VA-Design-System";
 ---
@@ -122,16 +123,27 @@ const pageTitle = "VA-Design-System";
                 />
             </ul>
         </div>
-        <div class="paragraph-section">
-            <h3>Defining the foundations</h3>
-            <p class="body-display">
-                To create a solid foundation for the design system, I documented
-                the styles avaliable which included designing and testing
-                accessible colour ramps in both light and dark themes. I also
-                created responsive typography that scaled across devices,
-                introudced an inclusive iconography set, and solidifyied a
-                responsive layout incorporating grids and spacing.
-            </p>
+        <div class="row paragraph-section">
+            <div class="left">
+                <Image
+                    src={VADSFoundations}
+                    alt="Multiple pages of the Virgin Atlantic Design System documentation including colour palette, typography, iconography, and layouts."
+                    class="hero-img"
+                />
+            </div>
+            <div class="right">
+                <div class="overview-wrapper">
+                    <h3>Defining the foundations</h3>
+                    <p class="body-display">
+                        To create a solid foundation for the design system, I documented
+                        the styles avaliable which included designing and testing
+                        accessible colour ramps in both light and dark themes. I also
+                        created responsive typography that scaled across devices,
+                        introudced an inclusive iconography set, and solidifyied a
+                        responsive layout incorporating grids and spacing.
+                    </p>
+                </div>
+            </div>
         </div>
     </ContentLayout>
     <ContentLayout ariaLabel="The Outcome">

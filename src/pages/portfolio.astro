@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ContentLayout from "../layouts/ContentLayout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import VADSImg from "../images/va/vads-cover.png";
+import VestImg from "../images/vested/vested-cover.png";
 import VAFCImg from "../images/va/vafc-cover.png";
 import SOARImg from "../images/soarizon/soarizon-cover.png";
 const pageTitle = "Projects";
@@ -23,6 +24,11 @@ const pageTitle = "Projects";
                     title="Establishing a unified design system at the heart of Virgin Atlantic's brand"
                     url="/projects/vads"
                     imgRef={VADSImg}
+                />
+                <ProjectCard
+                    company="Vested Impact"
+                    title="Bringing a social impact algorithm to life, helping businesses track their impact"
+                    imgRef={VestImg}
                 />
                 <ProjectCard
                     company="Virgin Atlantic"
