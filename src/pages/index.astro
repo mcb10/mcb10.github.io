@@ -1,28 +1,18 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+import Intro from "../components/Intro.astro";
 import Ticker from "../components/Ticker.astro";
-// import Greeting from '../components/Greeting.jsx';
 const pageTitle = "Home";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-  <!-- <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} /> -->
-  <section role="contentinfo" aria-label="Welcome" class="hero-banner">
-    <div class="container">
-      <h1>Hello, my name is Mia Bromige</h1>
-      <p class="body-display text-centre large">
-        As an ambitious creative designer, I bring practical experience in
-        guiding a product from early concept to market fruition. My fundamental
-        software expertise enables the creation of exciting and technically
-        viable innovative ideas.
-      </p>
-      <p class="body-caption text-centre">Currently working at Virgin Atlantic</p>
-    </div>
+<PageLayout pageTitle={pageTitle}>
+  <section slot="main">
+    <Intro />
+    <section>
+      <Ticker text="Product Designer from the UK" />
+    </section>
   </section>
-  <section>
-    <Ticker text="Product Designer from the UK" />
-  </section>
-</BaseLayout>
+</PageLayout>
 
 <style>
   .hero-banner {

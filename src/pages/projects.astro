@@ -1,0 +1,64 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import ContentLayout from "../layouts/ContentLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import VADSImg from "../images/va/vads-cover.png";
+import VestImg from "../images/vested/vested-cover.png";
+import VAFCImg from "../images/va/vafc-cover.png";
+import SOARImg from "../images/soarizon/soarizon-cover.png";
+const pageTitle = "Projects";
+---
+
+<PageLayout pageTitle={pageTitle}>
+  <section slot="main" class="my-16">
+    <ContentLayout ariaLabel="Projects">
+      <h1
+        class="font-bold text-text-heading text-center text-4xl md:text-5xl pt-4 pb-8 overflow-hidden"
+      >
+        <span
+          class="bg-gradient-to-bl bg-no-repeat bg-bottom bg-[length:90%_40%]
+              from-primary-blue to-primary-blue dark:from-primary-blue dark:to-primary-blue"
+        >
+          Projects
+        </span>
+      </h1>
+      <p class="text-center">Explore some of my wonderful projects</p>
+    </ContentLayout>
+    <div>
+      <ul class="card-wrapper">
+        <ProjectCard
+          company="Virgin Atlantic"
+          title="Establishing a unified design system at the heart of Virgin Atlantic's brand"
+          url="/projects/vads"
+          imgRef={VADSImg}
+        />
+        <ProjectCard
+          company="Vested Impact"
+          title="Bringing a social impact algorithm to life, helping businesses track their impact"
+          imgRef={VestImg}
+        />
+        <ProjectCard
+          company="Virgin Atlantic"
+          title="Redefining the way customers oversee and interact with their loyalty account"
+          imgRef={VAFCImg}
+        />
+        <ProjectCard
+          company="SOARIZON by Thales"
+          title="Revitalizing the approach to mission planning for drone pilots to be more dynamic"
+          imgRef={SOARImg}
+        />
+      </ul>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .card-wrapper {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+    grid-gap: 2rem;
+  }
+</style>

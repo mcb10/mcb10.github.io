@@ -1,39 +1,26 @@
 ---
-import Hamburger from "./Hamburger.astro";
-import NavMenu from "./NavMenu.astro";
-import ThemeIcon from "./ThemeIcon.astro";
-import { Image } from "astro:assets";
-import mbLogo from "../images/mbLogo.webp";
+import Nav from "./Nav.astro";
+import DarkModeToggle from "./DarkModeToggle.astro";
 ---
 
-<header>
-  <div class="header-wrapper">
-    <div class="left-content">
-      <Hamburger />
-      <a href="/">
-        <Image src={mbLogo} alt="MB initials" height="48" />
-      </a>
-    </div>
-
-    <nav>
-      <NavMenu />
-    </nav>
-    <ThemeIcon />
-  </div>
+<header class="">
+    <a
+        class="unset absolute z-10 left-[50%] -top-[100rem] translate-x-[-50%] bg-white text-black px-8 py-2 focus:top-[initial]"
+        href="#main"
+    >
+        Skip to content
+    </a>
+    <Nav />
+    <DarkModeToggle />
 </header>
-
 <style>
-  .left-content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: inherit;
-  }
-  .header-wrapper {
-    height: inherit;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+    header {
+        grid-area: header;
+        display: grid;
+        align-items: center;
+        grid-template-columns: minmax(0, 1fr) minmax(0, max-content) minmax(
+                0,
+                max-content
+            );
+    }
 </style>

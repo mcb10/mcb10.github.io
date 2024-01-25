@@ -3,6 +3,8 @@ import preact from "@astrojs/preact";
 import partytown from '@astrojs/partytown';
 import icon from "astro-icon";
 
+import tailwind from "@astrojs/tailwind";
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://mcb10.github.io',
@@ -10,5 +12,5 @@ export default defineConfig({
     config: {
       forward: ["dataLayer.push"]
     }
-  }), icon()]
+  }), icon(), tailwind()]
 });

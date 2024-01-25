@@ -1,0 +1,39 @@
+---
+import Hamburger from "./Hamburger.astro";
+import NavMenu from "./NavMenu.astro";
+import ThemeIcon from "./ThemeIcon.astro";
+import { Image } from "astro:assets";
+import mbLogo from "../images/mbLogo.webp";
+---
+
+<header>
+  <div class="header-wrapper">
+    <div class="left-content">
+      <Hamburger />
+      <a href="/">
+        <Image src={mbLogo} alt="MB initials" height="48" />
+      </a>
+    </div>
+
+    <nav>
+      <NavMenu />
+    </nav>
+    <ThemeIcon />
+  </div>
+</header>
+
+<style>
+  .left-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: inherit;
+  }
+  .header-wrapper {
+    height: inherit;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+</style>

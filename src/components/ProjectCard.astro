@@ -13,22 +13,12 @@ const { company, title, body, url, imgRef } = Astro.props;
 			/>
 		</div>
 		<div class="content-wrapper">
-			<div class="subtitle" aria-hidden="true">{company}</div>
-			<h3>{title}</h3>
+			<div class="text-sm tracking-widest uppercase" aria-hidden="true">{company}</div>
+			<h2 class="text-xl font-semibold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200">{title}</h2>
 		</div>
 	</a>
 </li>
 
-<!-- <li class="link-card">
-	<a href={url}>
-		<h3>
-			{title}
-		</h3>
-		<p>
-			{body}
-		</p>
-	</a>
-</li> -->
 <style>
 	.card {
 		border-radius: 0.5rem;
@@ -74,7 +64,8 @@ const { company, title, body, url, imgRef } = Astro.props;
 	}
 
 	.content-wrapper {
-		padding: 1rem;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
 	}
 
 	/* .link-card {

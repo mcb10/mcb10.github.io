@@ -1,10 +1,10 @@
 ---
-import BaseLayout from "./BaseLayout.astro";
+import PageLayout from "./PageLayout.astro";
 import ContentLayout from "./ContentLayout.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout pageTitle={frontmatter.title}>
+<PageLayout pageTitle={frontmatter.title}>
     <ContentLayout ariaLabel="Introduction">
         <div class="hero-intro">
             <h1>{frontmatter.client}</h1>
@@ -32,7 +32,7 @@ const { frontmatter } = Astro.props;
         </div>
     </ContentLayout>
     <slot />
-</BaseLayout>
+</PageLayout>
 
 <style>
     .hero-intro {

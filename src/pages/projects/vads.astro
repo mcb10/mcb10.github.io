@@ -1,202 +1,201 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageLayout from "../../layouts/PageLayout.astro";
+import Hero from "../../components/widgets/Hero.astro";
 import ContentLayout from "../../layouts/ContentLayout.astro";
 import IconCard from "../../components/IconCard.astro";
 import { Image } from "astro:assets";
 import VADSImg from "../../images/va/vads-cover.png";
 import VADSFoundations from "../../images/va/foundations.png";
-import Ticker from "../../components/Ticker.astro";
 const pageTitle = "VA-Design-System";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-    <div class="img-container">
-        <Image
-            src={VADSImg}
-            alt="A variety of Virgin Atlantic Design System components and patterns, arranged into a collage"
-            class="hero-img"
-        />
-    </div>
+<PageLayout pageTitle={pageTitle}>
+  <section slot="main">
+    <Image
+        src={VADSImg}
+        alt="A variety of Virgin Atlantic Design System components and patterns, arranged into a collage"
+        class="hero-img"
+    />
     <ContentLayout ariaLabel="Introduction">
-        <div class="hero-intro">
-            <h1>Virgin Atlantic</h1>
-            <p class="body-display large">
-                As the Product Designer for VA Design System, I played a key
-                role in designing, documenting, and overseeing the development
-                of the system.
-            </p>
-        </div>
+      <div class="hero-intro mt-12 mb-16">
+        <h1
+          class="text-3xl md:text-5xl font-semibold mb-4"
+        >
+          Virgin Atlantic
+        </h1>
+        <p class="body-display large">
+          As the Product Designer for VA Design System, I played a key role in
+          designing, documenting, and overseeing the development of the system.
+        </p>
+      </div>
     </ContentLayout>
-    <Ticker text="Product Designer | Design System" />
     <ContentLayout ariaLabel="Overview">
-        <div class="subtitle" aria-hidden="true">Overview</div>
-        <div class="overview-wrapper">
-            <h2 class="section">Building and scaling VA Design System</h2>
-            <p class="body-display dual-paragraph">
-                Virgin Atlantic has a number of digital experiences that are
-                resposnible for key areas of the customer journey; from
-                exploring holiday destinations to flight booking, inflight
-                entertainment access, and connectivity in the skies. However,
-                these experiences are managed by different teams and often
-                developed using different design systems with varying levels of
-                maturity. In some cases, some are built locally without a design
-                system in the loop. This fragmentation poses a significant
-                challenge, making it nearly impossible to implement global
-                changes to the identity of Virgin Atlantic's digital experiences
-                without substantial time and effort investments.
-            </p>
-        </div>
+      <div class="text-sm tracking-widest uppercase mb-4" aria-hidden="true">Overview</div>
+      <div class="overview-wrapper">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-4">Building and scaling VA Design System</h2>
+        <p class="text-base dual-paragraph">
+          Virgin Atlantic has a number of digital experiences that are
+          resposnible for key areas of the customer journey; from exploring
+          holiday destinations to flight booking, inflight entertainment access,
+          and connectivity in the skies. However, these experiences are managed
+          by different teams and often developed using different design systems
+          with varying levels of maturity. In some cases, some are built locally
+          without a design system in the loop. This fragmentation poses a
+          significant challenge, making it nearly impossible to implement global
+          changes to the identity of Virgin Atlantic's digital experiences
+          without substantial time and effort investments.
+        </p>
+      </div>
     </ContentLayout>
     <ContentLayout ariaLabel="The Problem">
-        <div class="withImage">
-            <div class="subtitle" aria-hidden="true">The Problem</div>
-            <h2 class="section">Problem Statement</h2>
-            <p class="body-display">
-                Virgin Atlantic needed a design system to serve as a single
-                source of truth for all scrum teams. This would aim to uphold a
-                consistent brand identity, an enhanced user experience, and an
-                overall improved efficiency during the implementation of new
-                features and proof of concept work.
-            </p>
-        </div>
-        <p class="body-caption">
-            Here is an example from an internal audit which clearly illustrated
-            the challenge ahead
+      <div class="withImage">
+        <div class="text-sm tracking-widest uppercase mb-4" aria-hidden="true">The Problem</div>
+        <h2 class="text-2xl md:text-3xl font-semibold mb-4">Problem Statement</h2>
+        <p class="body-display">
+          Virgin Atlantic needed a design system to serve as a single source of
+          truth for all scrum teams. This would aim to uphold a consistent brand
+          identity, an enhanced user experience, and an overall improved
+          efficiency during the implementation of new features and proof of
+          concept work.
         </p>
+      </div>
+      <p class="body-caption">
+        Here is an example from an internal audit which clearly illustrated the
+        challenge ahead
+      </p>
     </ContentLayout>
     <ContentLayout ariaLabel="The Process">
-        <div class="subtitle" aria-hidden="true">What we did</div>
-        <h2 class="section">The Process</h2>
-        <div class="paragraph-section">
-            <h3>Research</h3>
+      <div class="text-sm tracking-widest uppercase mb-4" aria-hidden="true">What we did</div>
+      <h2 class="text-2xl md:text-3xl font-semibold mb-4">The Process</h2>
+      <div class="my-12">
+        <h3 class="text-xl md:text-2xl font-semibold mb-4">Research</h3>
+        <p class="body-display">
+          Given the presence of multiple design systems within Virgin Atlantic,
+          I took the initiative to <strong
+            >conduct a comprehensive audit of each system</strong
+          >. The goal was to gain a detailed understanding of the necessity for
+          each component and pattern, spanning both the Virgin Atlantic and
+          Virgin Atlantic Holidays brands. Simultaneously, I delved into <strong
+            >research on renowned design systems</strong
+          >, including IBM Carbon, Atlassian, and Material Design. This
+          groundwork was essential for <strong
+            >constructing a robust business case, highlighting the advantages of
+            establishing a unified source of truth for both designers and
+            developers.
+          </strong>
+        </p>
+      </div>
+      <div class="my-12">
+        <h3 class="text-xl md:text-2xl font-semibold mb-4">Scope</h3>
+        <p class="body-display">
+          To determine the scope for the first phase of our project, we <strong
+            >established key principles</strong
+          > that would distinguish which elements are designated as design system
+          components and which would be retained locally within individual scrum
+          teams. These principles were outlined as follows:
+        </p>
+        <ul class="card-wrapper">
+          <IconCard
+            icon="mdi:check-circle-outline"
+            heading="Useful"
+            body="There is evidence that this component would be useful for many teams."
+          />
+          <IconCard
+            icon="mdi:diamond-outline"
+            heading="Unique"
+            body="It does not replicate something already in the design system."
+          />
+          <IconCard
+            icon="mdi:accessibility"
+            heading="Accessible"
+            body="The component must meet at least AA 2.1 WCAG standards."
+          />
+          <IconCard
+            icon="mdi:sync"
+            heading="Consistent"
+            body="It reuses existing styles and components in the design system where relevant."
+          />
+          <IconCard
+            icon="mdi:extension-outline"
+            heading="Versatile"
+            body="The implementation is adaptable enough that the component can be used in a range of different products/services that may need it."
+          />
+        </ul>
+      </div>
+      <div class="row my-12">
+        <div class="left">
+          <Image
+            src={VADSFoundations}
+            alt="Multiple pages of the Virgin Atlantic Design System documentation including colour palette, typography, iconography, and layouts."
+            class="hero-img"
+          />
+        </div>
+        <div class="right">
+          <div class="overview-wrapper">
+            <h3 class="text-xl md:text-2xl font-semibold mb-4">Defining the foundations</h3>
             <p class="body-display">
-                Given the presence of multiple design systems within Virgin
-                Atlantic, I took the initiative to <strong
-                    >conduct a comprehensive audit of each system</strong
-                >. The goal was to gain a detailed understanding of the
-                necessity for each component and pattern, spanning both the
-                Virgin Atlantic and Virgin Atlantic Holidays brands.
-                Simultaneously, I delved into <strong
-                    >research on renowned design systems</strong
-                >, including IBM Carbon, Atlassian, and Material Design. This
-                groundwork was essential for <strong
-                    >constructing a robust business case, highlighting the
-                    advantages of establishing a unified source of truth for
-                    both designers and developers.
-                </strong>
+              To create a solid foundation for the design system, I documented
+              the styles avaliable which included designing and testing
+              accessible colour ramps in both light and dark themes. I also
+              created responsive typography that scaled across devices,
+              introudced an inclusive iconography set, and solidifyied a
+              responsive layout incorporating grids and spacing.
             </p>
+          </div>
         </div>
-        <div class="paragraph-section">
-            <h3>Scope</h3>
-            <p class="body-display">
-                To determine the scope for the first phase of our project, we <strong
-                    >established key principles</strong
-                > that would distinguish which elements are designated as design
-                system components and which would be retained locally within individual
-                scrum teams. These principles were outlined as follows:
-            </p>
-            <ul class="card-wrapper">
-                <IconCard
-                    icon="mdi:check-circle-outline"
-                    heading="Useful"
-                    body="There is evidence that this component would be useful for many teams."
-                />
-                <IconCard
-                    icon="mdi:diamond-outline"
-                    heading="Unique"
-                    body="It does not replicate something already in the design system."
-                />
-                <IconCard
-                    icon="mdi:accessibility"
-                    heading="Accessible"
-                    body="The component must meet at least AA 2.1 WCAG standards."
-                />
-                <IconCard
-                    icon="mdi:sync"
-                    heading="Consistent"
-                    body="It reuses existing styles and components in the design system where relevant."
-                />
-                <IconCard
-                    icon="mdi:extension-outline"
-                    heading="Versatile"
-                    body="The implementation is adaptable enough that the component can be used in a range of different products/services that may need it."
-                />
-            </ul>
-        </div>
-        <div class="row paragraph-section">
-            <div class="left">
-                <Image
-                    src={VADSFoundations}
-                    alt="Multiple pages of the Virgin Atlantic Design System documentation including colour palette, typography, iconography, and layouts."
-                    class="hero-img"
-                />
-            </div>
-            <div class="right">
-                <div class="overview-wrapper">
-                    <h3>Defining the foundations</h3>
-                    <p class="body-display">
-                        To create a solid foundation for the design system, I documented
-                        the styles avaliable which included designing and testing
-                        accessible colour ramps in both light and dark themes. I also
-                        created responsive typography that scaled across devices,
-                        introudced an inclusive iconography set, and solidifyied a
-                        responsive layout incorporating grids and spacing.
-                    </p>
-                </div>
-            </div>
-        </div>
+      </div>
     </ContentLayout>
     <ContentLayout ariaLabel="The Outcome">
-        <div class="subtitle" aria-hidden="true">The Outcome</div>
-        <h2 class="section">Conclusion</h2>
-        <p class="body-display">
-            Virgin Atlantic Design System continues to grow and evolve, with
-            more digital projects utilising the design system. It is the
-            cornerstone of our visual design language and has played an
-            essential part in changing the company's perception of design
-            systems.
-        </p>
+      <div class="text-sm tracking-widest uppercase mb-4" aria-hidden="true">The Outcome</div>
+      <h2 class="text-2xl md:text-3xl font-semibold mb-4">Conclusion</h2>
+      <p class="body-display">
+        Virgin Atlantic Design System continues to grow and evolve, with more
+        digital projects utilising the design system. It is the cornerstone of
+        our visual design language and has played an essential part in changing
+        the company's perception of design systems.
+      </p>
     </ContentLayout>
+  </section>
+</PageLayout>
 
-    <style>
-        .card-wrapper {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            margin-top: 1.5rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
-            grid-gap: 1rem;
-        }
-        .img-container {
-            display: flex;
-            justify-content: center;
-            border-radius: 24px;
-            margin: 32px;
-        }
-        .hero-img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 20px;
-        }
-        .hero-intro {
-            justify-items: center;
-            text-align: center;
-        }
-        .image-content {
-            display: grid;
-            padding: 2rem;
-            grid-template-columns: 300px 1fr;
-            gap: 1rem;
-            align-items: center;
-            margin: 0 auto;
-            font: 500 100%/1.5 system-ui;
-        }
-        @media screen and (min-width: 1280px) {
-            .hero-img {
-                max-width: 1280px;
-            }
-        }
-    </style>
-</BaseLayout>
+<style>
+  .card-wrapper {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+    grid-gap: 1rem;
+  }
+  .img-container {
+    display: flex;
+    justify-content: center;
+    border-radius: 24px;
+    margin: 32px;
+  }
+  .hero-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  .hero-intro {
+    justify-items: center;
+    text-align: center;
+  }
+  .image-content {
+    display: grid;
+    padding: 2rem;
+    grid-template-columns: 300px 1fr;
+    gap: 1rem;
+    align-items: center;
+    margin: 0 auto;
+    font: 500 100%/1.5 system-ui;
+  }
+  @media screen and (min-width: 1280px) {
+    .hero-img {
+      max-width: 1280px;
+    }
+  }
+</style>

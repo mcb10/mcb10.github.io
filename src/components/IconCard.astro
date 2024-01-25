@@ -8,7 +8,7 @@ const { icon, heading, body } = Astro.props;
         <Icon class="icon" name={icon} width={28} height={28}/>
     </div>
     <div class="content-wrapper">
-        <h4>{heading}</h3>
+        <h4 class="text-md md:text-lg font-semibold">{heading}</h3>
         <p class="body-display small">{body}</p>
     </div>
 </li>
@@ -16,7 +16,6 @@ const { icon, heading, body } = Astro.props;
 <style>
     .card {
         border-radius: 0.5rem;
-        box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
         padding: 1rem;
     }
     .icon-container {

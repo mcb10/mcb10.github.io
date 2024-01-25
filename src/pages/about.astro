@@ -1,5 +1,5 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import PageLayout from "../layouts/PageLayout.astro";
 import ContentLayout from "../layouts/ContentLayout.astro";
 import { Image } from "astro:assets";
 
@@ -7,44 +7,57 @@ import Profile from "../images/profile.png";
 const pageTitle = "About";
 
 const identity = {
-    firstName: "Mia",
-    country: "United Kingdom",
-    occupation: "Product Designer",
-    hobbies: ["basketball", "drawing", "gaming", "movies"],
+  firstName: "Mia",
+  country: "United Kingdom",
+  occupation: "Product Designer",
+  hobbies: ["basketball", "drawing", "gaming", "movies"],
 };
 
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<PageLayout pageTitle={pageTitle}>
+  <section slot="main" class="my-16">
     <ContentLayout ariaLabel="My Story">
-        <div class="row">
-            <div class="img-container left">
-                <Image
-                    src={Profile}
-                    alt="A variety of Virgin Atlantic Design System components and patterns, arranged into a collage"
-                    class="hero-img"
-                />
-            </div>
-            <div class="right">
-                <div class="subtitle" aria-hidden="true">My Story</div>
-                <div class="overview-wrapper">
-                    <h2 class="section">Hello, I'm Mia.</h2>
-                    <p class="body-display paragraph-section">
-                        I'm a <strong>creative thinker</strong> and a <strong>proactive problem-solver</strong>
-                        who thrives when presented with a challenges.
-                    </p>
-                    <p class="body-display paragraph-section">
-                        My approach to product design is shaped by my <strong>background
-                        as a developer</strong>, ensuring that solutions are
-                        well-engineered and scalable but also user-friendly.
-                        Combining this with my <strong>deep curiosity for the synergy of
-                        technology and design</strong>, I strive to ensure that designs
-                        are not just functional but also thoughtful, accessible,
-                        and inspiring.
-                    </p>
-                </div>
-            </div>
+      <div class="row">
+        <div class="img-container left">
+          <Image
+            src={Profile}
+            alt="A variety of Virgin Atlantic Design System components and patterns, arranged into a collage"
+            class="rounded-2xl"
+          />
         </div>
+        <div class="right">
+          <div
+            class="pb-2 md:pb-4 max-w-5xl mx-auto"
+            aria-hidden="true"
+          >
+            My Story
+          </div>
+          <div class="overview-wrapper">
+            <h1
+              class="text-4xl md:text-5xl font-bold pb-8 font-heading"
+            >
+              Hello, I'm Mia.
+            </h1>
+            <p class="body-display paragraph-section">
+              I'm a <strong>creative thinker</strong> and a <strong
+                >proactive problem-solver</strong
+              >
+              who thrives when presented with a challenges.
+            </p>
+            <p class="body-display paragraph-section">
+              My approach to product design is shaped by my <strong
+                >background as a developer</strong
+              >, ensuring that solutions are well-engineered and scalable but
+              also user-friendly. Combining this with my <strong
+                >deep curiosity for the synergy of technology and design</strong
+              >, I strive to ensure that designs are not just functional but
+              also thoughtful, accessible, and inspiring.
+            </p>
+          </div>
+        </div>
+      </div>
     </ContentLayout>
-</BaseLayout>
+  </section>
+</PageLayout>
