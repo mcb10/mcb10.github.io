@@ -3,7 +3,6 @@ import "../styles/global.css";
 
 import FavIcon from "./FavIcon.astro";
 import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
 
 const { pageTitle } = Astro.props;
 ---
@@ -45,7 +44,6 @@ const { pageTitle } = Astro.props;
     <main id="main">
       <slot name="main" />
     </main>
-    <Footer />
     <script>
       import "../scripts/menu.js";
     </script>
