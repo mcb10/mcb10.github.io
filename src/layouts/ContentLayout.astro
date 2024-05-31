@@ -3,7 +3,7 @@ const { ariaLabel } = Astro.props;
 ---
 
 <section role="contentinfo" aria-label={ariaLabel}>
-    <div class="py-12">
+    <div class="py-12 max-w-screen-xl mx-auto px-4 sm:px-8">
         <slot />
     </div>
 </section>
