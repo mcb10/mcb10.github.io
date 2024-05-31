@@ -26,12 +26,12 @@ export default {
           selection: "rgb(var(--color-text-selection) / <alpha-value>)",
         },
         bg: {
-          body: "rgb(var(--color-bg-body) / <alpha-value>)",
+          default: "rgb(var(--color-bg-default) / <alpha-value>)",
           code: "rgb(var(--color-bg-code) / <alpha-value>)",
           selection: "rgb(var(--color-bg-selection) / <alpha-value>)",
         },
         border: {
-          code: "rgb(var(--color-border-code) / <alpha-value>)",
+          default: "rgb(var(--color-border-default) / <alpha-value>)",
         },
       },
       letterSpacing: {

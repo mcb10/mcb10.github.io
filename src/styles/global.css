@@ -27,14 +27,14 @@
     --color-text-selection: 0 0 0;
 
     /* white */
-    --color-bg-body: 255 255 255;
+    --color-bg: 255 255 255;
     /* tailwind amber-100 #fef3c7 */
     --color-bg-code: 254 243 199;
     /* tailwind lime-200 #d9f99d */
     --color-bg-selection: 217 249 157;
 
     /* tailwind slate-100 #f1f5f9 */
-    --color-border: 241 245 249;
+    --color-border-default: 241 245 249;
   }
 
   /* dark theme */
@@ -62,19 +62,19 @@
     --color-text-selection: 0 0 0;
 
     /* Tailwind slate-900 #0f172a */
-    --color-bg-body: 15 23 42;
+    --color-bg-default: 15 23 42;
     /* Tailwind sky-500 #0ea5e9 */
     --color-bg-code: 14 165 233;
     /* Tailwind lime-200 #d9f99d */
     --color-bg-selection: 217 249 157;
 
-    /* Tailwind yellow-100 #fef9c3 */
-    --color-border: 254 243 199;
+    /* Tailwind slate-800 #1e293b */
+    --color-border-default: 30 41 59;
   }
 
   :root {
     font-family: theme('fontFamily.body');
-    background-color: theme('colors.bg.body');
+    background-color: theme('colors.bg.default');
     color: theme('colors.text.body');
     /* base font-size 1px larger for better visibility */
     font-size: 1.125em;
